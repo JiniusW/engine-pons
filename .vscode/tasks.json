@@ -8,9 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\src\\math\\*.cpp",
-                "${workspaceFolder}\\tests\\test_math.cpp",
+                "${workspaceFolder}\\tests\\test_mat4.cpp",
                 "-o",
-                "${workspaceFolder}\\tests\\test_math.exe"
+                "${workspaceFolder}\\tests\\test_mat4.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
