@@ -27,7 +27,7 @@ Mat4 Mat4::operator*(const Mat4& other) const {
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
             result.m[i][j] = 0.0f;
-            
+
     // m1[i][0]*m2[0][j] + m1[i][1]*m2[1][j] + m1[i][2]*m2[2][j] + m1[i][3]*m2[3][j]
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
@@ -57,7 +57,7 @@ Mat4 Mat4::inverse() const{
         }
     }
 
-    // Gause-Jordan Elimination
+    // Gauss-Jordan Elimination
     // when pivot is 1 and others in same column is 0
     // pivot is the first number of each low
     for (int i = 0; i < 4; i++){
@@ -69,8 +69,7 @@ Mat4 Mat4::inverse() const{
             if(k == i) continue;
             float factor = aug[k][i];
             for (int j = 0; j < 8; j++){
-                // 다른 행에서 factor를 가진 행을 빼준다.
-                // pivot이 있는 열(j == i)원소는 pivot과 곱한값을 뺀다. (즉, 자기자신)
+                // pivot이 있는 행(i)에서 factor를 가진 행(k)을 빼준다.
                 aug[k][j] -= factor * aug[i][j];
             }
         }
